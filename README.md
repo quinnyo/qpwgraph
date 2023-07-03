@@ -1,4 +1,6 @@
-# qpwgraph - A PipeWire Graph Qt GUI Interface
+# (q)qpwgraph - A PipeWire Graph Qt GUI Interface
+
+- **NOTE:** *this is a personal fork of qpwgraph, take it or leave it.*
 
 ![Screenshot](src/images/qpwgraph_screenshot-1.png "Screenshot")
 
@@ -6,7 +8,7 @@
   using the [Qt C++ framework](https://qt.io), based and pretty much like the
   same of [QjackCtl](https://qjackctl.sourceforge.io).
 
-  Source code repository: https://gitlab.freedesktop.org/rncbc/qpwgraph
+  Upstream source code repository: https://gitlab.freedesktop.org/rncbc/qpwgraph
 
   Upstream author: Rui Nuno Capela <rncbc@rncbc.org>.
 
