@@ -4,6 +4,9 @@ qpwgraph - A PipeWire Graph Qt GUI Interface
 
 GIT HEAD
 
+- Dragging with MMB and C-LMB always pans the viewport, ignoring
+  selection/items.
+
 - Fixed the dimming of new connections when Patchbay/Edit mode is on
   and Patchbay/Auto Pin is off (issue #77).
 
