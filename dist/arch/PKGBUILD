@@ -1,0 +1,29 @@
+pkgname=qqpwgraph-git
+pkgver=r247.7752adf
+pkgrel=1
+pkgdesc="fork of qpwgraph - A PipeWire Graph Qt GUI Interface"
+arch=('x86_64')
+url="https://github.com/quinnyo/qpwgraph"
+license=('GPL')
+depends=('alsa-lib' 'pipewire' 'qt6-base' 'qt6-svg' 'hicolor-icon-theme')
+makedepends=('git' 'cmake')
+provides=('qpwgraph')
+conflicts=('qpwgraph')
+source=('qqpwgraph::git+https://github.com/quinnyo/qpwgraph.git#branch=qbranch')
+md5sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/${pkgname%-git}"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd "$srcdir/${pkgname%-git}"
+	cmake -B build -DCMAKE_INSTALL_PREFIX=/usr -DCONFIG_WAYLAND=ON
+	cmake --build build
+}
+
+package() {
+	cd "$srcdir/${pkgname%-git}"
+	DESTDIR="$pkgdir" cmake --install build
+}
